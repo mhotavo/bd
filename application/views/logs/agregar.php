@@ -74,8 +74,8 @@
           <div class="form-group">
             <label for="" class="col-md-3 control-label">Fecha</label>
             <div class="col-md-9">
-              <input type="date"  readonly class="form-control" name="FECHA"  id="FECHA" value="">
-              <input type="text"  readonly class="form-control" name="HORA"  id="HORA" value="">
+              <input type="date"   class="form-control" name="FECHA"  id="FECHA" value="">
+              <input type="text"   class="form-control" name="HORA"  id="HORA" value="">
             </div>
           </div>  
           <div class="form-group">
