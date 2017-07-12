@@ -16,18 +16,20 @@
               <th>Nombre</th>
               <th><i class="fa fa-user" aria-hidden="true"></i></th>
               <th><i class="fa fa-key" aria-hidden="true"></i></th>
+              <th><i class="fa fa-calendar" aria-hidden="true"></i></th>
               <th><i class="fa fa-pencil-square-o" aria-hidden="true"></i></th>
             </tr>
           </thead>
-          <tbody> 
+          <tbody style="font-size: 14px"> 
 
             <?php 
             foreach ($logs as $key => $row) 
             {  
               echo '<tr>';
-              echo '<td>'. ucwords(mb_strtolower($row->NOMBRE)).'</td>';
+              echo '<td><b>'. ucwords(mb_strtolower($row->NOMBRE)).'</b></td>';
               echo '<td>'. strtolower($row->EMAIL).'</td>';
               echo '<td>'. $row->CLAVE.'</td>';
+              echo '<td>'. $row->FECHA.'</td>';
               ?>
               <td>
                 <a  class="btn btn-warning" href="<?php echo base_url(); ?>logs/editar/<?php echo $row->ID; ?>"><i class="fa fa-cog" aria-hidden="true"></i></a> 

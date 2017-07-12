@@ -55,16 +55,13 @@ class Log extends CI_Model
 			$this->CIUDAD     = $log['CIUDAD'];
 			$this->VALORACION = $log['VALORACION'];
 			$this->NUM_CEL    = $log['NUM_CEL'];
-
-			
-			$this->USUARIOLOG  = $this->session->userdata('id');
-			$this->db->insert('log', $this);
+			$this->db->insert('logs', $this);
 		}
 	}
 
 	public function update($log=null)
 	{
-		
+
 
 		if ($log!=null) {
 
@@ -91,90 +88,10 @@ class Log extends CI_Model
 		if ($id!='') {
 			$this->ID = $id;
 			$this->db->where('ID', $this->ID);
-			$this->db->delete('log');
+			$this->db->delete('logs');
 		}
 	}
-
-	public function UltimaVez(){
-		$result = $this->db->query("SELECT FECHA FROM log WHERE TIPO='Sex' ORDER BY FECHA DESC LIMIT 1");
-		if ($result->num_rows() > 0) {
-			return $result->row();
-		} else {
-			return null;
-		} 
-	}
-
-	public function PrimeraVez(){
-		$result = $this->db->query("SELECT FECHA FROM log  WHERE TIPO='Sex' ORDER BY FECHA ASC LIMIT 1");
-		if ($result->num_rows() > 0) {
-			return $result->row();
-		} else {
-			return null;
-		} 
-	}
-
-	public function TotalSex(){
-		$result = $this->db->query("SELECT count(*) AS TOTAL FROM log WHERE TIPO='Sex'");
-		if ($result->num_rows() > 0) {
-			return $result->row();
-		} else {
-			return null;
-		} 
-	}
-
-	public function Total69(){
-		$result = $this->db->query("SELECT count(*) AS TOTAL FROM log WHERE TIPO='69' ");
-		if ($result->num_rows() > 0) {
-			return $result->row();
-		} else {
-			return null;
-		} 
-	}
-
-	public function TotalOralEl(){
-		$result = $this->db->query("SELECT count(*) AS TOTAL FROM log WHERE TIPO='El'");
-		if ($result->num_rows() > 0) {
-			return $result->row();
-		} else {
-			return null;
-		} 
-	}
-
-	public function TotalOralElla(){
-		$result = $this->db->query("SELECT count(*) AS TOTAL FROM log WHERE TIPO='Ella'");
-		if ($result->num_rows() > 0) {
-			return $result->row();
-		} else {
-			return null;
-		} 
-	}
-
-	public function UltimoAndres(){
-		$result = $this->db->query("SELECT FECHA FROM log  WHERE TIPO='Andres' ORDER BY FECHA DESC LIMIT 1");
-		if ($result->num_rows() > 0) {
-			return $result->row();
-		} else {
-			return null;
-		} 
-	}
-
-	public function ProximoAndres(){
-		$result = $this->db->query("SELECT   DATE_ADD(FECHA, INTERVAL 28 DAY) AS NEXT FROM log  WHERE TIPO='Andres' ORDER BY FECHA DESC LIMIT 1");
-		if ($result->num_rows() > 0) {
-			return $result->row();
-		} else {
-			return null;
-		} 
-	}
-
-	public function ProximaInyeccion(){
-		$result = $this->db->query("SELECT   DATE_ADD(FECHA, INTERVAL 30 DAY) AS NEXT FROM log  WHERE TIPO='Inyeccion' ORDER BY FECHA DESC LIMIT 1");
-		if ($result->num_rows() > 0) {
-			return $result->row();
-		} else {
-			return null;
-		} 
-	}
+ 
 
 
 }

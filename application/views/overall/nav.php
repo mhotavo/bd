@@ -14,14 +14,12 @@
        <li><a href="<?= base_url(); ?>logs/agregar"> Agregar  <i class="fa fa-bed" aria-hidden="true"></i></a></li> 
      </ul>
      <ul class="nav navbar-nav">
-     <li><a href="<?= base_url(); ?>"> Activos <i class="fa fa-list" aria-hidden="true"></i></i></a></li> 
+       <li><a href="<?= base_url(); ?>"> Activos <i class="fa fa-list" aria-hidden="true"></i></i></a></li> 
      </ul>
      <ul class="nav navbar-nav">
        <li><a href="<?= base_url(); ?>logs/inactivos"> Inactivos <i class="fa fa-list" aria-hidden="true"></i></i></a></li> 
      </ul>
-     <ul class="nav navbar-nav">
-       <li><a href="<?= base_url(); ?>"> informe <i class="fa fa-bar-chart" aria-hidden="true"></i></i></i></a></li> 
-     </ul>
+
      <ul class="nav navbar-nav navbar-right">
 
       <li class="dropdown">
