@@ -26,7 +26,7 @@
             foreach ($logs as $key => $row) 
             {  
               echo '<tr>';
-              echo '<td><b>'. ucwords(mb_strtolower($row->NOMBRE)).'</b></td>';
+              echo '<td class="text-default"><b>'. ucwords(mb_strtolower($row->NOMBRE)).'</b></td>';
               echo '<td>'. strtolower($row->EMAIL).'</td>';
               echo '<td>'. $row->CLAVE.'</td>';
               echo '<td>'. $row->FECHA.'</td>';
@@ -57,7 +57,7 @@
       $('.dataTable').DataTable({
         "iDisplayLength": -1,
         "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
-        "autoWidth": false,           
+        "autoWidth": true,           
         "sPaginationType": "full_numbers",
         //"order": [[ 2, 'desc' ]]
       });
