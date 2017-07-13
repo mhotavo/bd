@@ -2,7 +2,7 @@
 <body>
   <?php $this->load->view('overall/nav'); ?>
   <div class="container">
-  <h3 align="center"> Registro </h3>
+    <h3 align="center"> Registro </h3>
     <br>
     <div class="">
       <div class="col-md-2"></div>
@@ -81,7 +81,8 @@
           <div class="form-group">
             <label for="" class="col-md-3 control-label">Contraseña Incorrecta</label>
             <div class="col-md-9">
-              <input type="checkbox" name="FAIL" id="FAIL" value="1" >
+           Si  <input type="radio" name="FAIL" id="FAIL" value="1" >
+           No  <input type="radio" name="FAIL" id="FAIL" value="0" >
             </div>
           </div>  
           <div class="form-group" align="center">

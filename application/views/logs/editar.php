@@ -78,12 +78,14 @@
 							<input type="text"  readonly class="form-control" name="HORA"  id="HORA" value="<?php echo $log[0]->HORA; ?>">
 						</div>
 					</div>	
+					 
 					<div class="form-group">
 						<label for="" class="col-md-3 control-label">Contraseña Incorrecta</label>
 						<div class="col-md-9">
-							<input type="checkbox" name="FAIL" id="FAIL" value="1" <?php echo (!empty($log[0]->FECHA)) ? 'checked' : null ?> > 
+							Si  <input type="radio" name="FAIL" id="FAIL" value="1" <?php echo ($log[0]->FAIL=='1') ? 'checked' : null ?>  >
+							No  <input type="radio" name="FAIL" id="FAIL" value="0" <?php echo ($log[0]->FAIL=='0') ? 'checked' : null ?> >
 						</div>
-					</div>	
+					</div> 
 					<div class="form-group" align="center">
 						<div class="col-lg-10 col-lg-offset-2">
 							<button type="submit" class="btn btn-success">Guardar</button>

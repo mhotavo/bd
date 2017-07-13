@@ -28,25 +28,22 @@ class Log extends CI_Model
 	public function get_ok()
 	{
 		#SET GLOBAL sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));
-		$query = $this->db->query('SELECT * FROM logs WHERE FAIL!="1" GROUP BY  CLAVE ORDER BY FECHA DESC, HORA DESC ');
+		$query = $this->db->query('SELECT * FROM logs WHERE FAIL!="1" OR FAIL IS NULL GROUP BY  CLAVE ORDER BY FECHA DESC, HORA DESC ');
 		return $query->result();
 	} 
 
 	public function get_fail()
 	{
-		#SET GLOBAL sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));
-		$query = $this->db->query('SELECT * FROM logs WHERE FAIL="1" GROUP BY  CLAVE ORDER BY FECHA DESC, HORA DESC ');
+		$query = $this->db->query('SELECT * FROM logs WHERE FAIL=1 GROUP BY  CLAVE ORDER BY FECHA DESC, HORA DESC ');
 		return $query->result();
 	} 
 
 	public function add($log=null)
 	{
 		if ($log!=null) {
-			$this->ID         = $log['ID'];
 			$this->EMAIL      = $log['EMAIL'];
 			$this->CLAVE      = $log['CLAVE'];
 			$this->NOMBRE     = $log['NOMBRE'];
-			$this->FAIL       = $log['FAIL'];
 			$this->IP         = $log['IP'];
 			$this->FECHA      = $log['FECHA'];
 			$this->HORA       = $log['HORA'];
@@ -91,7 +88,7 @@ class Log extends CI_Model
 			$this->db->delete('logs');
 		}
 	}
- 
+
 
 
 }
